@@ -6,6 +6,28 @@
     <title>Aishwary Pratap Singh</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  // Wait for all assets (including the splash image) to load
+  window.addEventListener('load', () => {
+    const splash = document.getElementById('splash');
+    const body = document.body;
+
+    // Ensure a paint happens before we start the transition (mobile Safari friendly)
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        splash.classList.add('hide'); // start fade-out
+      }, 800); // keep splash visible briefly (adjust as you like)
+    });
+
+    // When fade finishes, remove splash and reveal main
+    splash.addEventListener('transitionend', () => {
+      body.classList.add('app-ready');
+      splash.remove(); // not strictly required, but keeps DOM clean
+    }, { once: true });
+  });
+</script>
+
+
 <body>
        <!-- Splash Screen -->
     <div id="splash">
@@ -27,7 +49,7 @@
             <ul>
               <p>You can contact me Via my <a href="mailto=apsinghftp13@gmail.com" target="_blank">Email</a> or by my <a href="https://www.instagram.com/ashlovesnoodle" target="_blank">Instagram</a>. 
              I also indulge in some casual <a href="https://www.instagram.com/ashlovesproduction" target="_blank">Photography</a> and occasionally publish a few unhinged <a href="https://ashlovesnoodle.substack.com/" target="_blank">
-                Blogs</a>. I also have a <a href="www.linkedin.com/in/aishwary-pratap-singh-0b9063365" target="_blank">Linkedin</a> which is of no use currently beacuse I'm undecisive. </p>
+                Blogs</a>. I also have a <a href="www.linkedin.com/in/aishwary-pratap-singh-0b9063365" target="_blank">Linkedin</a> which is of no use currently beacuse I'm indecisive. </p>
             </ul>
         </section>
 
