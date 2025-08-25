@@ -16,7 +16,7 @@ body {
 #splash {
   position: fixed;
   inset: 0;
-  background-color: #ce9b65;          /* matches image */
+  background-color: #f4be69;          /* matches image */
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@ body {
 @media (max-width: 768px) {
   #splash img {
     object-fit: contain;   /* show whole image without cropping */
-    background-color: #ce9b65; /* fill empty space with intro color */
+    background-color: #f4be69; /* fill empty space with intro color */
   }
 }
 
