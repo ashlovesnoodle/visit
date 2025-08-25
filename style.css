@@ -107,17 +107,83 @@ ul li:nth-child(5) { animation-delay: 1.1s; }
   align-items: center;
   justify-content: center;
 
-  /* smooth fade */
   opacity: 1;
   transition: opacity 0.8s ease;
-  will-change: opacity;
 }
 
 #splash img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* 100% fullscreen */
+  object-fit: cover;     /* fill screen */
+  object-position: center;
 }
+
+/* Force splash to appear "landscape-like" even on tall screens */
+@media screen and (max-aspect-ratio: 3/4) {
+  #splash img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Hide splash after fade */
+#splash.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- Main content (portrait/tall view) --- */
+main {
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+  opacity: 0;
+  transform: translateY(40px);
+  margin: 20px auto;
+}
+
+/* Make main content flow tall on phones */
+@media screen and (max-width: 768px) {
+  main {
+    width: 90%;
+    max-width: none;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+}
+
+/* Reveal main after splash fade */
+body.app-ready main {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Reveal only when JS marks body as ready */
+body.app-ready main {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* when JS adds this, the splash fades out */
 #splash.hide {
