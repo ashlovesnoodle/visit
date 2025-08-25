@@ -1,78 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aishwary Pratap Singh</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aishwary Pratap Singh</title>
+  <link rel="stylesheet" href="style.css?v=2" />
+
+  <!-- Fill mobile browser chrome/overscroll with intro color -->
+  <meta name="theme-color" content="#ce9b65" />
+  <meta name="theme-color" content="#ce9b65" media="(prefers-color-scheme: dark)" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </head>
-<script>
-  // Wait for all assets (including the splash image) to load
-  window.addEventListener('load', () => {
-    const splash = document.getElementById('splash');
-    const body = document.body;
-
-    // Ensure a paint happens before we start the transition (mobile Safari friendly)
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        splash.classList.add('hide'); // start fade-out
-      }, 800); // keep splash visible briefly (adjust as you like)
-    });
-
-    // When fade finishes, remove splash and reveal main
-    splash.addEventListener('transitionend', () => {
-      body.classList.add('app-ready');
-      splash.remove(); // not strictly required, but keeps DOM clean
-    }, { once: true });
-  });
-</script>
-
 
 <body>
-  
-       <!-- Splash Screen -->
-    <div id="splash">
-        <img src="lal;.png" alt="Splash Logo">
-    </div>
-    <main>
-        <h1>Hi, I’m Aishwary Pratap Singh</h1>
-        <p>Student | Aspiring Leader | Tech Enthusiast | Generic Student #47 | Homelab Geek</p>
-        
-        <section>
-            <h2>About Me</h2>
-            <p>Hello Adventurer🦬, Welcome to this lonely page on the World Wide Web🛜. Myself Ash👋, an Enthusiast of the most 
-                random things but I'm an idiot by heart 🤷‍♂️. I like explorinng new things that fascinate me, be it in technology, sports, or life in general.
-            </p>
-        </section>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="lal;.png" alt="Splash Logo" />
+  </div>
 
-        <section>
-            <h2>You can catch me at:</h2>
-            <ul>
-              <p>
-  You can contact me via my 
-  <a href="mailto:apsinghftp13@gmail.com">Email</a> 
-  or on <a href="https://www.instagram.com/ashlovesnoodle" target="_blank">Instagram</a>. 
-  I also indulge in some casual 
-  <a href="https://www.instagram.com/ashlovesproduction" target="_blank">Photography</a> 
-  and occasionally publish a few unhinged 
-  <a href="https://ashlovesnoodle.substack.com/" target="_blank">Blogs</a>. 
-  I also have a 
-  <a href="https://www.linkedin.com/in/aishwary-pratap-singh-0b9063365" target="_blank">LinkedIn</a> 
-  which is of no use currently because I'm indecisive.
-</p>
-            </ul>
-        </section>
+  <main>
+    <h1>Hi, I’m Aishwary Pratap Singh</h1>
+    <p>Student | Aspiring Leader | Tech Enthusiast | Generic Student #47 | Homelab Geek</p>
 
-        <section>
-            <h2>My current situation:</h2>
-            <ul>
-                <li>📚 Currently a grade 11 student at <a href="https://cmseducation.org/" target="_blank">City Montessori School</a></li>
-                <li>💼 Currently, I am greatly interested in aeronautics and plane mechanics. Indugling in features, functions, designs and history of planes across the world(Mainly fighter planes). </li>
-                <li>🌱 Fascinated by flimography and storytelling for now.</li>
-                <li>🎯 Not playing any sports right now becuase I'm really fricking lazy.(I miss sports😔) </li>
-                <li>🎮 Big gaming head, Enjoying and exploring different genres of games. Currently hooked on Rainbow six seige.</li>
-            </ul>
-        </section>
-    </main>
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Hello Adventurer🦬, Welcome to this lonely page on the World Wide Web🛜. Myself Ash👋, an Enthusiast of the most
+        random things but I'm an idiot by heart 🤷‍♂️. I like explorinng new things that fascinate me, be it in technology,
+        sports, or life in general.
+      </p>
+    </section>
+
+    <section>
+      <h2>You can catch me at:</h2>
+      <ul>
+        <p>
+          You can contact me via my
+          <a href="mailto:apsinghftp13@gmail.com">Email</a>
+          or on <a href="https://www.instagram.com/ashlovesnoodle" target="_blank">Instagram</a>.
+          I also indulge in some casual
+          <a href="https://www.instagram.com/ashlovesproduction" target="_blank">Photography</a>
+          and occasionally publish a few unhinged
+          <a href="https://ashlovesnoodle.substack.com/" target="_blank">Blogs</a>.
+          I also have a
+          <a href="https://www.linkedin.com/in/aishwary-pratap-singh-0b9063365" target="_blank">LinkedIn</a>
+          which is of no use currently because I'm indecisive.
+        </p>
+      </ul>
+    </section>
+
+    <section>
+      <h2>My current situation:</h2>
+      <ul>
+        <li>📚 Currently a grade 11 student at <a href="https://cmseducation.org/" target="_blank">City Montessori School</a></li>
+        <li>💼 Currently, I am greatly interested in aeronautics and plane mechanics. Indugling in features, functions, designs and history of planes across the world (Mainly fighter planes).</li>
+        <li>🌱 Fascinated by flimography and storytelling for now.</li>
+        <li>🎯 Not playing any sports right now becuase I'm really fricking lazy. (I miss sports😔)</li>
+        <li>🎮 Big gaming head, Enjoying and exploring different genres of games. Currently hooked on Rainbow six seige.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // Fade splash, then reveal main (mobile-safe)
+    window.addEventListener('load', () => {
+      const splash = document.getElementById('splash');
+      const body = document.body;
+
+      requestAnimationFrame(() => {
+        setTimeout(() => { splash.classList.add('hide'); }, 800);
+      });
+
+      splash.addEventListener('transitionend', () => {
+        body.classList.add('app-ready');
+        splash.remove();
+      }, { once: true });
+    });
+  </script>
 </body>
 </html>
