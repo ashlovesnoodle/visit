@@ -151,28 +151,15 @@ body.app-ready main {
     transform: translateY(0);
   }
 }
-/* Overlay that appears if device is in portrait */
-#rotate-warning {
-  position: fixed;
-  inset: 0;
-  background: beige;
-  z-index: 10000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 1.2em;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  color: #222;
+/* Responsive text sizes */
+h1 {
+  font-size: clamp(1.6em, 6vw, 2.2em);
 }
 
-/* Show warning only in portrait orientation */
-@media screen and (orientation: portrait) {
-  #rotate-warning {
-    display: flex;
-  }
-  body > *:not(#rotate-warning) {
-    display: none !important; /* hide everything else */
-  }
+h2 {
+  font-size: clamp(1.2em, 4.5vw, 1.6em);
+}
+
+p, li {
+  font-size: clamp(0.9em, 3.5vw, 1em);
 }
