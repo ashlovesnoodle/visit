@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light; /* force browsers to render in light mode */
+}
+
 /* Page + background fill (incl. mobile overscroll) */
 html, body { height: 100%; margin: 0; }
 html, body { background: #f4be69; }   /* new color */
